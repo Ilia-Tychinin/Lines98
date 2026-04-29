@@ -37,7 +37,7 @@ A classic Lines 98 puzzle game built as a PWA for iPhone. Pure HTML/CSS/JS, serv
 | Bump icon query string when replacing icons | iOS caches the touch icon separately from everything else |
 
 ## Game logic reference
-See `docs/development-plan.md` for scoring table, ball colors, and full feature list.
+Scoring: 5 in a row → 10 pts, 6 → 12, 7 → 18, 8 → 28, 9 → 42, 10+ → 60. Each line scored independently. 7 ball colors. Lines clear in all 8 directions.
 
 ## What's deferred
 - Sound effects (Web Audio API) — skip for v1, add later

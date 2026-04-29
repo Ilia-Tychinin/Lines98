@@ -91,14 +91,9 @@ Lines 98/
 │   ├── manifest.json
 │   ├── service-worker.js
 │   └── icons/
-├── tools/
-│   └── generate-icons.html   # Resize lines-98-icon.png → icons/
 ├── assets/
 │   ├── lines-98-icon.png     # Source icon
 │   └── image.png             # Reference screenshot
-├── docs/
-│   ├── development-plan.md
-│   └── lines98-project-brief.md
 ├── ssl/                  # Generated — not committed
 │   ├── cert.pem
 │   └── key.pem
