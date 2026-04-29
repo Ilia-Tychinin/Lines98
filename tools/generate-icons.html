@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Generate Lines 98 Icons</title>
+  <style>
+    body { font-family: system-ui, sans-serif; padding: 32px; background: #111; color: #eee; }
+    h1   { margin-bottom: 8px; }
+    p    { color: #aaa; margin-bottom: 24px; }
+    label { display: inline-block; padding: 10px 20px; background: #333; border: 1px solid #555;
+            border-radius: 8px; cursor: pointer; }
+    label:hover { background: #444; }
+    input[type=file] { display: none; }
+    .previews { display: flex; gap: 32px; align-items: flex-end; margin-top: 32px; flex-wrap: wrap; }
+    .preview  { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    canvas    { border: 1px solid #444; border-radius: 8px; }
+    a.dl      { display: inline-block; padding: 10px 20px; background: #2a6; color: #fff;
+                border-radius: 8px; text-decoration: none; font-weight: bold; }
+    a.dl:hover { background: #3b7; }
+  </style>
+</head>
+<body>
+  <h1>Lines 98 — Icon Generator</h1>
+  <p>Select <strong>lines-98-icon.png</strong> (from this folder). Icons will be resized and ready to download.</p>
+
+  <label>
+    <input type="file" id="file-input" accept="image/png,image/jpeg,image/svg+xml">
+    Choose source image
+  </label>
+
+  <div class="previews" id="previews" style="display:none">
+    <div class="preview">
+      <strong>192 × 192</strong>
+      <canvas id="c192" width="192" height="192"></canvas>
+      <a class="dl" id="dl192" download="icon-192.png">Download icon-192.png</a>
+    </div>
+    <div class="preview">
+      <strong>512 × 512</strong>
+      <canvas id="c512" width="512" height="512"></canvas>
+      <a class="dl" id="dl512" download="icon-512.png">Download icon-512.png</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('file-input').addEventListener('change', function (e) {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const img = new Image();
+      img.onload = function () {
+        [192, 512].forEach(size => {
+          const canvas = document.getElementById('c' + size);
+          const ctx = canvas.getContext('2d');
+          ctx.clearRect(0, 0, size, size);
+          ctx.drawImage(img, 0, 0, size, size);
+          document.getElementById('dl' + size).href = canvas.toDataURL('image/png');
+        });
+        document.getElementById('previews').style.display = 'flex';
+        URL.revokeObjectURL(img.src);
+      };
+      img.src = URL.createObjectURL(file);
+    });
+  </script>
+</body>
+</html>
