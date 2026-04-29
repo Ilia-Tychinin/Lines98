@@ -4,6 +4,9 @@ ssl/
 # Diagnostics / local screenshots
 Diagnostics/
 
+# Original docs. Not needed
+docs/
+
 # Claude memory
 .claude/
 
