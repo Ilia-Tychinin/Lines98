@@ -2,7 +2,7 @@
   'use strict';
 
   // ── Constants ──────────────────────────────────────────────────
-  const COLORS      = ['red', 'blue', 'green', 'yellow', 'magenta', 'cyan', 'orange'];
+  const COLORS      = ['red', 'blue', 'green', 'yellow', 'magenta', 'cyan', 'brown'];
   const SPAWN       = 3;
   const MIN_LINE    = 5;
   const STEP_MS     = 80;

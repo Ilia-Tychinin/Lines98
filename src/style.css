@@ -28,7 +28,7 @@
   --yel-l:  #ffdd44; --yel-d:  #887700;
   --mag-l:  #ff66ff; --mag-d:  #880088;
   --cyn-l:  #44ddee; --cyn-d:  #006677;
-  --org-l:  #ff8833; --org-d:  #cc4400;
+  --brn-l:  #c87a3a; --brn-d:  #5a2800;
 }
 
 html, body {
@@ -245,13 +245,14 @@ button:disabled {
   z-index: 1;
 }
 
-.preview-dot[data-color="red"]     { background: radial-gradient(circle at 50% 50%, var(--red-l),  var(--red-d)); }
-.preview-dot[data-color="blue"]    { background: radial-gradient(circle at 50% 50%, var(--blue-l), var(--blue-d)); }
-.preview-dot[data-color="green"]   { background: radial-gradient(circle at 50% 50%, var(--grn-l),  var(--grn-d)); }
-.preview-dot[data-color="yellow"]  { background: radial-gradient(circle at 50% 50%, var(--yel-l),  var(--yel-d)); }
-.preview-dot[data-color="magenta"] { background: radial-gradient(circle at 50% 50%, var(--mag-l),  var(--mag-d)); }
-.preview-dot[data-color="cyan"]    { background: radial-gradient(circle at 50% 50%, var(--cyn-l),  var(--cyn-d)); }
-.preview-dot[data-color="orange"]  { background: radial-gradient(circle at 50% 50%, var(--org-l),  var(--org-d)); }
+/* Ball colors — shared by .preview-dot, .ball, and .next-ball via data-color attribute */
+[data-color="red"]     { background: radial-gradient(circle at 50% 50%, var(--red-l),  var(--red-d)); }
+[data-color="blue"]    { background: radial-gradient(circle at 50% 50%, var(--blue-l), var(--blue-d)); }
+[data-color="green"]   { background: radial-gradient(circle at 50% 50%, var(--grn-l),  var(--grn-d)); }
+[data-color="yellow"]  { background: radial-gradient(circle at 50% 50%, var(--yel-l),  var(--yel-d)); }
+[data-color="magenta"] { background: radial-gradient(circle at 50% 50%, var(--mag-l),  var(--mag-d)); }
+[data-color="cyan"]    { background: radial-gradient(circle at 50% 50%, var(--cyn-l),  var(--cyn-d)); }
+[data-color="brown"]   { background: radial-gradient(circle at 50% 50%, var(--brn-l),  var(--brn-d)); }
 
 /* ── Ball ────────────────────────────────────────────── */
 
@@ -268,7 +269,7 @@ button:disabled {
   transition: transform 0.15s ease-out;
 }
 
-/* Glossy highlight layer is shared; color layer is per-color */
+/* Glossy highlight */
 .ball::before {
   content: '';
   position: absolute;
@@ -277,14 +278,6 @@ button:disabled {
   background: radial-gradient(circle at 35% 28%, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0) 52%);
   z-index: 1;
 }
-
-.ball[data-color="red"]     { background: radial-gradient(circle at 50% 50%, var(--red-l), var(--red-d)); }
-.ball[data-color="blue"]    { background: radial-gradient(circle at 50% 50%, var(--blue-l), var(--blue-d)); }
-.ball[data-color="green"]   { background: radial-gradient(circle at 50% 50%, var(--grn-l), var(--grn-d)); }
-.ball[data-color="yellow"]  { background: radial-gradient(circle at 50% 50%, var(--yel-l), var(--yel-d)); }
-.ball[data-color="magenta"] { background: radial-gradient(circle at 50% 50%, var(--mag-l), var(--mag-d)); }
-.ball[data-color="cyan"]    { background: radial-gradient(circle at 50% 50%, var(--cyn-l), var(--cyn-d)); }
-.ball[data-color="orange"]  { background: radial-gradient(circle at 50% 50%, var(--org-l), var(--org-d)); }
 
 /* Selected ball pulse animation */
 .cell.selected .ball {
@@ -327,14 +320,6 @@ button:disabled {
   background: radial-gradient(circle at 35% 28%, rgba(255,255,255,0.7) 0%, transparent 52%);
 }
 .next-ball { position: relative; overflow: hidden; }
-.next-ball[data-color="red"]     { background: radial-gradient(circle at 50% 50%, var(--red-l), var(--red-d)); }
-.next-ball[data-color="blue"]    { background: radial-gradient(circle at 50% 50%, var(--blue-l), var(--blue-d)); }
-.next-ball[data-color="green"]   { background: radial-gradient(circle at 50% 50%, var(--grn-l), var(--grn-d)); }
-.next-ball[data-color="yellow"]  { background: radial-gradient(circle at 50% 50%, var(--yel-l), var(--yel-d)); }
-.next-ball[data-color="magenta"] { background: radial-gradient(circle at 50% 50%, var(--mag-l), var(--mag-d)); }
-.next-ball[data-color="cyan"]    { background: radial-gradient(circle at 50% 50%, var(--cyn-l), var(--cyn-d)); }
-.next-ball[data-color="orange"]  { background: radial-gradient(circle at 50% 50%, var(--org-l), var(--org-d)); }
-
 /* ── Game Over overlay ───────────────────────────────── */
 
 #overlay {

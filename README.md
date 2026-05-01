@@ -2,6 +2,8 @@
 
 A classic Lines 98 (Color Lines) puzzle game built as a PWA for iPhone. Runs fully offline after installation — no backend, no subscription, no app store.
 
+<img src="assets/screenshot.jpg" width="300" alt="Lines 98 running on iPhone">
+
 ## Prerequisites
 
 - Windows PC with [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed
@@ -93,7 +95,7 @@ Lines 98/
 │   └── icons/
 ├── assets/
 │   ├── lines-98-icon.png     # Source icon
-│   └── image.png             # Reference screenshot
+│   └── screenshot.jpg        # README screenshot
 ├── ssl/                  # Generated — not committed
 │   ├── cert.pem
 │   └── key.pem
